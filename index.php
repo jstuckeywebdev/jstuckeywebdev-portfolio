@@ -21,8 +21,6 @@
             Web Developer specializing in clean custom WordPress themes and modern frontend solutions.
         </p>
     </div>
-    <h1>testing git</h1>
-    <h2>testing git part 2</h2>
 </div>
 
 <?php get_footer(); ?>
