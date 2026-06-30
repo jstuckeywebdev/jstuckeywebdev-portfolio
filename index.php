@@ -22,6 +22,7 @@
         </p>
     </div>
     <h1>testing git</h1>
+    <h2>testing git part 2</h2>
 </div>
 
 <?php get_footer(); ?>
