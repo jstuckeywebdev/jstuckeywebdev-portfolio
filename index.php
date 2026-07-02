@@ -1,11 +1,12 @@
 <?php get_header(); ?>
 
-<div class="relative min-h-125 flex items-center overflow-hidden bg-slate-950 border-b border-slate-900 py-24 home-hero-bg-image"> 
+<div class="relative min-h-125 flex items-center overflow-hidden bg-slate-950 border-b border-slate-900 py-24"> 
     <video 
         autoplay 
         loop 
         muted 
-        playsinline 
+        playsinline
+        poster="<?php echo get_template_directory_uri(); ?>/assets/images/home-hero-code-image.jpg"
         class="absolute inset-0 w-full h-full object-cover pointer-events-none z-0 object-left">
         <source src="<?php echo get_template_directory_uri(); ?>/assets/videos/home-hero-code-video.mp4" type="video/mp4">
     </video>

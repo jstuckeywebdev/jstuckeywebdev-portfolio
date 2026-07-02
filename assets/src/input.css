@@ -4,7 +4,3 @@
   --font-sans: "Inter", "Plus Jakarta Sans", sans-serif;
   --font-mono: "JetBrains Mono", "Fira Code", monospace;
 }
-
-.home-hero-bg-image {
-  background-image: url('../images/home-hero-code-image.jpg');
-}
