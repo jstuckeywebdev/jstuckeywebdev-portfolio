@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="relative min-h-[500px] flex items-center overflow-hidden bg-slate-950 border-b border-slate-900 py-24">   
+<div class="relative min-h-125 flex items-center overflow-hidden bg-slate-950 border-b border-slate-900 py-24">   
     <video 
         autoplay 
         loop 
@@ -10,7 +10,7 @@
         <source src="<?php echo get_template_directory_uri(); ?>/assets/videos/home-hero-code-video.mp4" type="video/mp4">
     </video>
 
-    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-slate-900/90 to-slate-950/40 z-10 pointer-events-none"></div>
+    <div class="absolute inset-0 bg-linear-to-t from-slate-950/40 via-slate-900/90 to-slate-950/40 z-10 pointer-events-none"></div>
 
     <div class="relative z-20 max-w-5xl mx-auto px-6 w-full home-hero-copy">
         <span class="font-mono text-sm font-semibold tracking-wider text-indigo-400 uppercase">Available for Work</span>
