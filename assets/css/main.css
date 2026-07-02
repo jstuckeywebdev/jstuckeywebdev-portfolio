@@ -375,6 +375,9 @@
     opacity: 80%;
   }
 }
+.home-hero-bg-image {
+  background-image: url('../images/home-hero-code-image.jpg');
+}
 @property --tw-border-style {
   syntax: "*";
   inherits: false;
