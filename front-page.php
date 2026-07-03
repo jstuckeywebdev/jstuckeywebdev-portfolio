@@ -13,7 +13,7 @@
 
     <div class="backdrop-blur-xs absolute inset-0 bg-linear-to-t from-slate-950/40 via-slate-900/90 to-slate-950/40 z-10 pointer-events-none"></div>
     <div class="container m-auto px-4 sm:px-6 lg:px-8">
-        <div class="relative z-20 max-w-5xl mr-auto w-full fade-and-slide-in">
+        <div class="header-offset relative z-20 max-w-5xl mr-auto w-full fade-and-slide-in">
             <span class="font-mono text-sm font-semibold tracking-wider text-indigo-400 uppercase">Available for Work</span>
             <h1 class="text-5xl font-bold tracking-tight text-slate-100 mt-3 mb-4">
                 Joey Stuckey
