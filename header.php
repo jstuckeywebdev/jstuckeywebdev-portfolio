@@ -12,14 +12,13 @@
     <?php wp_head(); ?>
 </head>
 <body>
-<header class="p-5 bg-slate-950">
-    <div class="flex justify-between container m-auto">
-        <div class="site-title font-mono font-medium text-slate-400"><a href="/">Joey Stuckey | Web Developer</a></div>
+<header class="py-5 bg-slate-950">
+    <div class="flex justify-between container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="site-title font-mono font-medium text-slate-100"><a href="/">Joey Stuckey | Web Developer</a></div>
         <nav>
             <ul class="flex gap-8 font-mono">
-                <li class="font-medium text-slate-400">My Work</li>
-                <li class="font-medium text-slate-400">Services</li>
-                <li class="font-medium text-slate-400">Contact</li>
+                <li><a href="#my-work" class="font-medium text-slate-100 hover:text-indigo-400 transition-colors">My Work</a></li>
+                <li><a href="#contact" class="font-medium text-slate-100 hover:text-indigo-400 transition-colors">Contact</a></li>
             </ul>
         </nav>
     </div>

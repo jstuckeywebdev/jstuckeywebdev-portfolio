@@ -24,3 +24,5 @@ function portfolio_enqueue_styles() {
 
 // Hook the function into the front-end enqueue sequence
 add_action('wp_enqueue_scripts', 'portfolio_enqueue_styles');
+
+add_theme_support( 'post-thumbnails' );
