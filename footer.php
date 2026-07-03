@@ -11,6 +11,39 @@
         </nav>
     </div>
 </footer>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('mobile-nav-toggle');
+    const menu = document.getElementById('mobile-nav-menu');
+
+    if (!toggle || !menu) return;
+
+    const closeMenu = () => {
+        menu.classList.add('hidden');
+        toggle.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open menu');
+    };
+
+    toggle.addEventListener('click', () => {
+        const isOpen = !menu.classList.contains('hidden');
+
+        if (isOpen) {
+            closeMenu();
+            return;
+        }
+
+        menu.classList.remove('hidden');
+        toggle.classList.add('is-open');
+        toggle.setAttribute('aria-expanded', 'true');
+        toggle.setAttribute('aria-label', 'Close menu');
+    });
+
+    menu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', closeMenu);
+    });
+});
+</script>
     <?php wp_footer(); ?>
 </body>
 </html>
