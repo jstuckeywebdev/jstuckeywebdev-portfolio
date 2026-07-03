@@ -25,11 +25,13 @@
     </div>
 </section>
 
-<section id="my-work" class="py-15 relative lazy-loaded">
+<section id="my-work" class="py-15 relative" >
     <div class="absolute inset-0 bg-linear-to-t from-slate-900/80 via-slate-950/40 to-slate-900/80 z-10 pointer-events-none"></div>
     
-    <div class="slide-in-left container mx-auto z-20 relative px-4 sm:px-6 lg:px-8">
-        <h2 class="font-mono text-slate-100 text-4xl mb-5">My Work</h2> 
+    <div class="fade-and-slide-in container mx-auto z-20 relative px-4 sm:px-6 lg:px-8">
+        <span class="font-mono text-sm font-semibold tracking-wider text-indigo-400 uppercase">Portfolio</span>
+        <h2 class="font-mono text-slate-100 text-4xl mt-3 mb-3">Featured Projects</h2>
+        <p class="text-slate-400 text-lg mb-8 leading-relaxed">A selection of custom web development projects, featuring clean code, responsive layouts, and tailored WordPress architecture.</p> 
     </div>
 
     <div class="slide-in-left portfolio-carousel-scroller carousel-scroll-inset relative z-30 w-full overflow-x-auto scrollbar-hide snap-x snap-mandatory cursor-grab active:cursor-grabbing select-none">
@@ -121,19 +123,6 @@ document.addEventListener('DOMContentLoaded', () => {
         scroller.scrollLeft = scrollLeft - walk;
     });
 });
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Remove the hidden/offset classes and add active classes
-        entry.target.classList.remove('opacity-0', 'translate-y-10');
-        entry.target.classList.add('opacity-100', 'translate-y-0');
-      }
-    });
-  });
-
-  observer.observe(document.getElementById('lazy-loaded'));
-
 </script>
 
 <?php get_footer(); ?>
