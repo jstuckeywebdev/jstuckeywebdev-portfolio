@@ -6,7 +6,7 @@
         loop 
         muted 
         playsinline
-        poster="<?php echo get_template_directory_uri(); ?>/assets/images/home-hero-code-image.jpg"
+        poster="<?php echo get_template_directory_uri(); ?>/assets/images/home-hero-bg-image.jpeg"
         class="absolute inset-0 w-full h-full object-cover pointer-events-none z-0 object-left">
         <source src="<?php echo get_template_directory_uri(); ?>/assets/videos/jstuckeywebdev_hero_video_2026-07-03-compressed.mp4" type="video/mp4">
     </video>
