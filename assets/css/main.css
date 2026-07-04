@@ -965,9 +965,7 @@
   overflow-anchor: none;
 }
 .portfolio-item-filtered-out {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+  display: none;
 }
 @media (max-width: 767px) {
   html {

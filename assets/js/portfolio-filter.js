@@ -81,6 +81,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function applyPortfolioFilter(scrollY, carouselScrollLeft) {
+        const portfolioSection = document.getElementById('my-work');
+        const sectionHeight = portfolioSection ? portfolioSection.offsetHeight : null;
+
+        if (portfolioSection && sectionHeight) {
+            portfolioSection.style.minHeight = `${sectionHeight}px`;
+        }
+
+        if (scroller) {
+            scroller.style.scrollSnapType = 'none';
+        }
+
         [...portfolioParent.children].forEach((item) => {
             if (!item.matches('article')) return;
 
@@ -88,10 +99,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 || activeTags.every((tagClass) => item.classList.contains(tagClass));
 
             item.classList.toggle('portfolio-item-filtered-out', !matchesTags);
-            item.setAttribute('aria-hidden', matchesTags ? 'false' : 'true');
+            item.toggleAttribute('hidden', !matchesTags);
         });
 
-        restoreScroll(scrollY, carouselScrollLeft);
+        let targetCarouselScroll = carouselScrollLeft;
+
+        if (scroller) {
+            if (activeTags.length === 0) {
+                targetCarouselScroll = 0;
+            } else {
+                const firstVisible = portfolioParent.querySelector('article:not(.portfolio-item-filtered-out)');
+                targetCarouselScroll = firstVisible ? firstVisible.offsetLeft : 0;
+            }
+
+            const maxScroll = Math.max(0, scroller.scrollWidth - scroller.clientWidth);
+            scroller.scrollLeft = Math.min(targetCarouselScroll, maxScroll);
+            scroller.style.scrollSnapType = '';
+        }
+
+        const releaseSectionPin = () => {
+            if (portfolioSection) {
+                portfolioSection.style.minHeight = '';
+            }
+        };
+
+        restoreScroll(scrollY, scroller ? scroller.scrollLeft : null);
+        requestAnimationFrame(releaseSectionPin);
+        window.setTimeout(releaseSectionPin, 350);
     }
 
     function handleTagActivation(tag, scrollY) {
