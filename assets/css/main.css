@@ -964,6 +964,22 @@
 .portfolio-carousel-scroller {
   overflow-anchor: none;
 }
+.portfolio-item-filtered-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+@media (max-width: 767px) {
+  html {
+    scroll-behavior: auto;
+  }
+  .portfolio-carousel-scroller {
+    scroll-snap-type: none;
+  }
+  .portfolio-carousel-scroller article {
+    scroll-snap-align: none;
+  }
+}
 @keyframes fade-and-slide-in {
   0% {
     transform: translateY(15px);

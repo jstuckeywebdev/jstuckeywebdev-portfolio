@@ -25,6 +25,26 @@ function portfolio_enqueue_styles() {
 // Hook the function into the front-end enqueue sequence
 add_action('wp_enqueue_scripts', 'portfolio_enqueue_styles');
 
+function portfolio_enqueue_scripts() {
+    if (!is_front_page()) {
+        return;
+    }
+
+    $script_path = get_template_directory() . '/assets/js/portfolio-filter.js';
+    $script_uri = get_template_directory_uri() . '/assets/js/portfolio-filter.js';
+    $version = file_exists($script_path) ? filemtime($script_path) : '1.0.0';
+
+    wp_enqueue_script(
+        'portfolio-filter',
+        $script_uri,
+        array(),
+        $version,
+        true
+    );
+}
+
+add_action('wp_enqueue_scripts', 'portfolio_enqueue_scripts');
+
 add_theme_support( 'post-thumbnails' );
 
 add_theme_support( 'block-templates' );

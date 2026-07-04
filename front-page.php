@@ -36,7 +36,7 @@
             <?php 
             $all_tags = get_tags();
             foreach ($all_tags as $tag) {
-                echo '<span role="button" class="portfolio-tag portfolio-tag-filter-button cursor-pointer outline-slate-400 outline-1 hover:bg-slate-400 hover:text-slate-900 text-xs font-mono font-semibold text-slate-400 rounded-md py-1 px-2.5">' . esc_html($tag->name) . '</span>';
+                echo '<span class="portfolio-tag portfolio-tag-filter-button cursor-pointer outline-slate-400 outline-1 hover:bg-slate-400 hover:text-slate-900 text-xs font-mono font-semibold text-slate-400 rounded-md py-1 px-2.5">' . esc_html($tag->name) . '</span>';
             }
             ?>
         </div>
@@ -84,90 +84,5 @@
         </div>
     </div>
 </section>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const scroller = document.querySelector('.portfolio-carousel-scroller');
-
-    if (!scroller) return;
-
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    scroller.addEventListener('mousedown', (e) => {
-        isDown = true;
-        scroller.classList.add('active');
-        scroller.style.scrollSnapType = 'none';
-
-        startX = e.pageX - scroller.getBoundingClientRect().left;
-        scrollLeft = scroller.scrollLeft;
-    });
-
-    scroller.addEventListener('mouseleave', () => {
-        isDown = false;
-        scroller.classList.remove('active');
-        scroller.style.scrollSnapType = 'x mandatory';
-    });
-
-    scroller.addEventListener('mouseup', () => {
-        isDown = false;
-        scroller.classList.remove('active');
-        scroller.style.scrollSnapType = 'x mandatory';
-    });
-
-    scroller.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-
-        const x = e.pageX - scroller.getBoundingClientRect().left;
-        const walk = (x - startX) * 2;
-        scroller.scrollLeft = scrollLeft - walk;
-    });
-});
-
-const activeTags = [];
-const portfolioParent = document.getElementById('portfolio-carousel');
-
-function lockScrollPosition(scrollY) {
-    window.scrollTo(0, scrollY);
-    requestAnimationFrame(() => {
-        window.scrollTo(0, scrollY);
-        requestAnimationFrame(() => window.scrollTo(0, scrollY));
-    });
-}
-
-function applyPortfolioFilter() {
-    const scrollY = window.scrollY;
-    const portfolioItems = [...portfolioParent.children];
-
-    portfolioItems.forEach(item => {
-        const matchesTags = activeTags.length === 0 || activeTags.every(tagClass => item.classList.contains(tagClass));
-        item.classList.toggle('hidden', !matchesTags);
-    });
-
-    lockScrollPosition(scrollY);
-}
-
-const allTags = document.getElementsByClassName('portfolio-tag-filter-button');
-[...allTags].forEach(tag => {
-    tag.addEventListener('click', function () {
-        const cleanClass = tag.textContent.toLowerCase().replace(/\s/g, '');
-
-        if (tag.classList.contains('active')) {
-            tag.classList.remove('active', 'bg-slate-400', 'text-slate-900', cleanClass, 'outline-0');
-            tag.classList.add('outline-1');
-            activeTags = activeTags.filter(item => item !== cleanClass);
-        } else {
-            activeTags.push(cleanClass);
-            tag.classList.add('active', 'bg-slate-400', 'text-slate-900', cleanClass, 'outline-0');
-            tag.classList.remove('outline-1');
-        }
-
-        applyPortfolioFilter();
-    });
-});
-
-</script>
 
 <?php get_footer(); ?>
