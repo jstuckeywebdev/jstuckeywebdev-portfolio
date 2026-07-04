@@ -303,7 +303,7 @@
     overflow-anchor: none;
 }
 
-.portfolio-item-filtered-out {
+#portfolio-carousel-storage {
     display: none;
 }
 

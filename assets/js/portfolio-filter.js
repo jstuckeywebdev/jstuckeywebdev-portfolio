@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const scroller = document.querySelector('.portfolio-carousel-scroller');
     const portfolioParent = document.getElementById('portfolio-carousel');
+    const filteredStorage = document.getElementById('portfolio-carousel-storage');
+    const carouselSpacer = portfolioParent?.querySelector('.carousel-end-spacer');
     let activeTags = [];
 
     if (scroller) {
@@ -39,7 +41,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    if (!portfolioParent) return;
+    if (!portfolioParent || !filteredStorage || !carouselSpacer) return;
+
+    function stampPortfolioOrder() {
+        getAllArticlesInOrder().forEach((item, index) => {
+            item.dataset.portfolioOrder = String(index);
+        });
+    }
+
+    function getAllArticlesInOrder() {
+        const articles = [
+            ...portfolioParent.querySelectorAll('article'),
+            ...filteredStorage.querySelectorAll('article'),
+        ];
+
+        return articles.sort(
+            (a, b) => Number(a.dataset.portfolioOrder || 0) - Number(b.dataset.portfolioOrder || 0),
+        );
+    }
+
+    stampPortfolioOrder();
 
     function getScrollY() {
         if (window.visualViewport) {
@@ -80,7 +101,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function applyPortfolioFilter(scrollY, carouselScrollLeft) {
+    function articleMatchesFilter(article) {
+        return activeTags.length === 0
+            || activeTags.every((tagClass) => article.classList.contains(tagClass));
+    }
+
+    function applyPortfolioFilter(scrollY) {
         const portfolioSection = document.getElementById('my-work');
         const sectionHeight = portfolioSection ? portfolioSection.offsetHeight : null;
 
@@ -92,28 +118,22 @@ document.addEventListener('DOMContentLoaded', () => {
             scroller.style.scrollSnapType = 'none';
         }
 
-        [...portfolioParent.children].forEach((item) => {
-            if (!item.matches('article')) return;
+        const articles = getAllArticlesInOrder();
 
-            const matchesTags = activeTags.length === 0
-                || activeTags.every((tagClass) => item.classList.contains(tagClass));
-
-            item.classList.toggle('portfolio-item-filtered-out', !matchesTags);
-            item.toggleAttribute('hidden', !matchesTags);
+        articles.forEach((article) => {
+            article.remove();
         });
 
-        let targetCarouselScroll = carouselScrollLeft;
+        articles.forEach((article) => {
+            if (articleMatchesFilter(article)) {
+                portfolioParent.insertBefore(article, carouselSpacer);
+            } else {
+                filteredStorage.appendChild(article);
+            }
+        });
 
         if (scroller) {
-            if (activeTags.length === 0) {
-                targetCarouselScroll = 0;
-            } else {
-                const firstVisible = portfolioParent.querySelector('article:not(.portfolio-item-filtered-out)');
-                targetCarouselScroll = firstVisible ? firstVisible.offsetLeft : 0;
-            }
-
-            const maxScroll = Math.max(0, scroller.scrollWidth - scroller.clientWidth);
-            scroller.scrollLeft = Math.min(targetCarouselScroll, maxScroll);
+            scroller.scrollLeft = 0;
             scroller.style.scrollSnapType = '';
         }
 
@@ -123,15 +143,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
-        restoreScroll(scrollY, scroller ? scroller.scrollLeft : null);
+        restoreScroll(scrollY, 0);
         requestAnimationFrame(releaseSectionPin);
         window.setTimeout(releaseSectionPin, 350);
     }
 
     function handleTagActivation(tag, scrollY) {
-        const carouselScrollLeft = scroller ? scroller.scrollLeft : null;
         toggleTag(tag);
-        applyPortfolioFilter(scrollY, carouselScrollLeft);
+        applyPortfolioFilter(scrollY);
     }
 
     [...document.getElementsByClassName('portfolio-tag-filter-button')].forEach((tag) => {

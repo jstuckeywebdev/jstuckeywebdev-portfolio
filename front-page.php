@@ -63,7 +63,8 @@
             endif;
             ?>
 
-            <div aria-hidden="true" class="shrink-0 w-[15vw] md:w-8"></div>
+            <div id="portfolio-carousel-storage" hidden aria-hidden="true"></div>
+            <div aria-hidden="true" class="carousel-end-spacer shrink-0 w-[15vw] md:w-8"></div>
         </div>
     </div>
 </section>
