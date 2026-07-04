@@ -130,6 +130,7 @@ var activeTags = [];
 const allTags = document.getElementsByClassName('portfolio-tag-filter-button');
 [...allTags].forEach(tag => {
     tag.addEventListener('click', function (e) {
+        e.currentTarget.blur();
         var cleanClass = tag.textContent.toLowerCase();
         cleanClass = cleanClass.replace(/\s/g, '');
         
