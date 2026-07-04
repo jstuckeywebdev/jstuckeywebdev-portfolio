@@ -31,11 +31,19 @@
     <div class="fade-and-slide-in container mx-auto z-20 relative px-4 sm:px-6 lg:px-8">
         <span class="font-mono text-sm font-semibold tracking-wider text-indigo-400 uppercase">Portfolio</span>
         <h2 class="font-mono text-slate-100 text-4xl mt-3 mb-3">Featured Projects</h2>
-        <p class="text-slate-400 text-lg mb-8 leading-relaxed">A selection of custom web development projects, featuring clean code, responsive layouts, and tailored WordPress architecture.</p> 
+        <p class="text-slate-400 mb-6 text-lg leading-relaxed">A selection of custom web development projects, featuring clean code, responsive layouts, and tailored WordPress architecture.</p> 
+        <div class="all-tags flex flex-wrap mb-8 gap-2">
+            <?php 
+            $all_tags = get_tags();
+            foreach ($all_tags as $tag) {
+                echo '<button class="portfolio-tag portfolio-tag-filter-button outline-slate-400 outline-1 hover:bg-slate-400 hover:text-slate-900 text-xs font-mono font-semibold text-slate-400 rounded-md py-1 px-2.5">' . esc_html($tag->name) . '</button>';
+            }
+            ?>
+        </div>
     </div>
 
     <div class="slide-in-left portfolio-carousel-scroller carousel-scroll-inset relative z-30 w-full overflow-x-auto scrollbar-hide snap-x snap-mandatory cursor-grab active:cursor-grabbing select-none">
-        <div class="portfolio-carousel-track flex gap-6 pb-6 carousel-track-padding">
+        <div id="portfolio-carousel" class="portfolio-carousel-track flex gap-6 pb-6 carousel-track-padding">
             <?php
             $args = array(
                 'post_type'      => 'entry',
@@ -77,12 +85,6 @@
     </div>
 </section>
 
-
-
-
-
-
-
 <script>
 document.addEventListener('DOMContentLoaded', () => {
     const scroller = document.querySelector('.portfolio-carousel-scroller');
@@ -123,6 +125,50 @@ document.addEventListener('DOMContentLoaded', () => {
         scroller.scrollLeft = scrollLeft - walk;
     });
 });
+
+var activeTags = [];
+const allTags = document.getElementsByClassName('portfolio-tag-filter-button');
+[...allTags].forEach(tag => {
+    tag.addEventListener('click', function (e) {
+        var cleanClass = tag.textContent.toLowerCase();
+        cleanClass = cleanClass.replace(/\s/g, '');
+        
+        if(tag.classList.contains('active')){
+            tag.classList.remove('active');
+            tag.classList.remove('bg-slate-400');
+            tag.classList.remove('text-slate-900');
+            tag.classList.remove(cleanClass);
+            tag.classList.remove('outline-0');
+            tag.classList.add('outline-1');
+            activeTags = activeTags.filter(item => item !== cleanClass);
+
+        } else {
+            activeTags.push(cleanClass);
+            tag.classList.add('active');
+            tag.classList.add('bg-slate-400');
+            tag.classList.add('text-slate-900');
+            tag.classList.add(cleanClass);
+            tag.classList.add('outline-0');
+            tag.classList.remove('outline-1');
+        }
+
+        console.log(activeTags);
+
+        const portfolioParent = document.getElementById('portfolio-carousel');
+        const portfolioItems = [...portfolioParent.children];
+        
+        
+        portfolioItems.forEach(item => {
+            const hasAnyTag = activeTags.every(tag => item.classList.contains(tag));
+            if(!hasAnyTag){
+                item.classList.add('hidden');
+            } else {
+                item.classList.remove('hidden');   
+            }
+        });
+    })
+});
+
 </script>
 
 <?php get_footer(); ?>

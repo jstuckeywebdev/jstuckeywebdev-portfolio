@@ -266,6 +266,9 @@
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
   }
+  .mb-6 {
+    margin-bottom: calc(var(--spacing) * 6);
+  }
   .mb-8 {
     margin-bottom: calc(var(--spacing) * 8);
   }
@@ -627,11 +630,25 @@
   .text-slate-500 {
     color: var(--color-slate-500);
   }
+  .text-slate-900 {
+    color: var(--color-slate-900);
+  }
   .text-slate-950 {
     color: var(--color-slate-950);
   }
   .uppercase {
     text-transform: uppercase;
+  }
+  .outline-0 {
+    outline-style: var(--tw-outline-style);
+    outline-width: 0px;
+  }
+  .outline-1 {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+  }
+  .outline-slate-400 {
+    outline-color: var(--color-slate-400);
   }
   .backdrop-blur-xs {
     --tw-backdrop-blur: blur(var(--blur-xs));
@@ -692,6 +709,13 @@
       }
     }
   }
+  .hover\:bg-slate-400 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-slate-400);
+      }
+    }
+  }
   .hover\:text-indigo-300 {
     &:hover {
       @media (hover: hover) {
@@ -710,6 +734,13 @@
     &:hover {
       @media (hover: hover) {
         color: var(--color-slate-200);
+      }
+    }
+  }
+  .hover\:text-slate-900 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-slate-900);
       }
     }
   }
@@ -842,79 +873,79 @@
 .contact-form-card .forminator-error-message {
   color: var(--color-red-400) !important;
 }
-.html {
+.portfolio-tag.html {
   background-color: #E34F26;
   color: #FFFFFF;
 }
-.css {
+.portfolio-tag.css {
   background-color: #1572B6;
   color: #FFFFFF;
 }
-.js, .javascript {
+.portfolio-tag.js, .portfolio-tag.javascript {
   background-color: #F7DF1E;
   color: #000000;
 }
-.wordpress, .wp {
+.portfolio-tag.wordpress, .portfolio-tag.wp {
   background-color: #21759B;
   color: #FFFFFF;
 }
-.tailwindcss, .tailwind {
+.portfolio-tag.tailwindcss, .portfolio-tag.tailwind {
   background-color: #06B6D4;
   color: #000000;
 }
-.bootstrap {
+.portfolio-tag.bootstrap {
   background-color: #7952B3;
   color: #FFFFFF;
 }
-.react {
+.portfolio-tag.react {
   background-color: #61DAFB;
   color: #000000;
 }
-.vue {
+.portfolio-tag.vue {
   background-color: #4FC08D;
   color: #ffffff;
 }
-.angular {
+.portfolio-tag.angular {
   background-color: #DD0031;
   color: #FFFFFF;
 }
-.jquery {
+.portfolio-tag.jquery {
   background-color: #0769AD;
   color: #FFFFFF;
 }
-.php {
+.portfolio-tag.php {
   background-color: #777BB4;
   color: #FFFFFF;
 }
-.nodejs, .node {
+.portfolio-tag.nodejs, .portfolio-tag.node {
   background-color: #339933;
   color: #FFFFFF;
 }
-.python {
+.portfolio-tag.python {
   background-color: #3776AB;
   color: #FFFFFF;
 }
-.mysql {
+.portfolio-tag.mysql {
   background-color: #4479A1;
   color: #FFFFFF;
 }
-.mongodb, .mongo {
+.portfolio-tag.mongodb, .portfolio-tag.mongo {
   background-color: #47A248;
   color: #FFFFFF;
 }
-.git {
+.portfolio-tag.git {
   background-color: #F05032;
   color: #FFFFFF;
 }
-.github {
+.portfolio-tag.github {
   background-color: #181717;
   color: #FFFFFF;
 }
-.sass, .scss {
+.portfolio-tag.sass, .portfolio-tag.scss {
   background-color: #CC6699;
   color: #FFFFFF;
 }
-.webpack {
+.portfolio-tag.webpack {
   background-color: #8DD6F9;
   color: #000000;
 }
@@ -963,7 +994,7 @@
   }
 }
 .forminator-field-captcha {
-  margin-bottom: 20px;
+  margin-bottom: 28px;
 }
 @property --tw-scroll-snap-strictness {
   syntax: "*";
@@ -1028,6 +1059,11 @@
 @property --tw-tracking {
   syntax: "*";
   inherits: false;
+}
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
 }
 @property --tw-backdrop-blur {
   syntax: "*";
@@ -1101,6 +1137,7 @@
       --tw-leading: initial;
       --tw-font-weight: initial;
       --tw-tracking: initial;
+      --tw-outline-style: solid;
       --tw-backdrop-blur: initial;
       --tw-backdrop-brightness: initial;
       --tw-backdrop-contrast: initial;

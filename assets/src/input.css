@@ -187,103 +187,103 @@
 
 /* --- Core Web Technologies --- */
 
-.html {
+.portfolio-tag.html {
     background-color: #E34F26; /* Official HTML5 Orange */
     color: #FFFFFF;
 }
 
-.css {
+.portfolio-tag.css {
     background-color: #1572B6; /* Official CSS3 Blue */
     color: #FFFFFF;
 }
 
-.js, .javascript {
+.portfolio-tag.js, .portfolio-tag.javascript {
     background-color: #F7DF1E; /* Official JS Yellow */
     color: #000000; /* Dark text required for contrast */
 }
 
 /* --- Frameworks & Libraries --- */
 
-.wordpress, .wp {
+.portfolio-tag.wordpress, .portfolio-tag.wp {
     background-color: #21759B; /* Official WordPress Blue */
     color: #FFFFFF;
 }
 
-.tailwindcss, .tailwind {
+.portfolio-tag.tailwindcss, .portfolio-tag.tailwind {
     background-color: #06B6D4; /* Official Tailwind Cyan */
     color: #000000; /* Dark text for optimal readability */
 }
 
-.bootstrap {
+.portfolio-tag.bootstrap {
     background-color: #7952B3; /* Official Bootstrap Purple */
     color: #FFFFFF;
 }
 
-.react {
+.portfolio-tag.react {
     background-color: #61DAFB; /* Official React Light Blue */
     color: #000000; /* Dark text required for contrast */
 }
 
-.vue {
+.portfolio-tag.vue {
     background-color: #4FC08D; /* Official Vue Green */
     color: #ffffff;
 }
 
-.angular {
+.portfolio-tag.angular {
     background-color: #DD0031; /* Official Angular Red */
     color: #FFFFFF;
 }
 
-.jquery {
+.portfolio-tag.jquery {
     background-color: #0769AD; /* Official jQuery Blue */
     color: #FFFFFF;
 }
 
 /* --- Backend & Databases --- */
 
-.php {
+.portfolio-tag.php {
     background-color: #777BB4; /* Official PHP Purple/Blue */
     color: #FFFFFF;
 }
 
-.nodejs, .node {
+.portfolio-tag.nodejs, .portfolio-tag.node {
     background-color: #339933; /* Official Node.js Green */
     color: #FFFFFF;
 }
 
-.python {
+.portfolio-tag.python {
     background-color: #3776AB; /* Official Python Blue */
     color: #FFFFFF;
 }
 
-.mysql {
+.portfolio-tag.mysql {
     background-color: #4479A1; /* Official MySQL Blue */
     color: #FFFFFF;
 }
 
-.mongodb, .mongo {
+.portfolio-tag.mongodb, .portfolio-tag.mongo {
     background-color: #47A248; /* Official MongoDB Green */
     color: #FFFFFF;
 }
 
 /* --- Build Tools & Version Control --- */
 
-.git {
+.portfolio-tag.git {
     background-color: #F05032; /* Official Git Orange */
     color: #FFFFFF;
 }
 
-.github {
+.portfolio-tag.github {
     background-color: #181717; /* Official GitHub Dark Grey/Black */
     color: #FFFFFF;
 }
 
-.sass, .scss {
+.portfolio-tag.sass, .portfolio-tag.scss {
     background-color: #CC6699; /* Official Sass Pink */
     color: #FFFFFF;
 }
 
-.webpack {
+.portfolio-tag.webpack {
     background-color: #8DD6F9; /* Official Webpack Blue */
     color: #000000;
 }
