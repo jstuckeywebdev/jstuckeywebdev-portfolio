@@ -962,6 +962,9 @@
     margin-top: 40px;
   }
 }
+.forminator-field-captcha {
+  margin-bottom: 20px;
+}
 @property --tw-scroll-snap-strictness {
   syntax: "*";
   inherits: false;
