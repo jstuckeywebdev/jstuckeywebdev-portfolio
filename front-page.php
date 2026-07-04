@@ -36,7 +36,7 @@
             <?php 
             $all_tags = get_tags();
             foreach ($all_tags as $tag) {
-                echo '<button class="portfolio-tag portfolio-tag-filter-button outline-slate-400 outline-1 hover:bg-slate-400 hover:text-slate-900 text-xs font-mono font-semibold text-slate-400 rounded-md py-1 px-2.5">' . esc_html($tag->name) . '</button>';
+                echo '<button type="button" class="portfolio-tag portfolio-tag-filter-button outline-slate-400 outline-1 hover:bg-slate-400 hover:text-slate-900 text-xs font-mono font-semibold text-slate-400 rounded-md py-1 px-2.5">' . esc_html($tag->name) . '</button>';
             }
             ?>
         </div>
@@ -130,7 +130,6 @@ var activeTags = [];
 const allTags = document.getElementsByClassName('portfolio-tag-filter-button');
 [...allTags].forEach(tag => {
     tag.addEventListener('click', function (e) {
-        e.currentTarget.blur();
         var cleanClass = tag.textContent.toLowerCase();
         cleanClass = cleanClass.replace(/\s/g, '');
         

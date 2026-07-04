@@ -949,6 +949,9 @@
   background-color: #8DD6F9;
   color: #000000;
 }
+.portfolio-tag-filter-button:focus:not(:focus-visible) {
+  outline: none;
+}
 @keyframes fade-and-slide-in {
   0% {
     transform: translateY(15px);

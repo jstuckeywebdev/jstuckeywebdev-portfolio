@@ -288,6 +288,10 @@
     color: #000000;
 }
 
+.portfolio-tag-filter-button:focus:not(:focus-visible) {
+    outline: none;
+}
+
 @keyframes fade-and-slide-in {
   0% {
     transform: translateY(15px); /* Start 15px lower */
