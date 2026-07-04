@@ -36,7 +36,7 @@
             <?php 
             $all_tags = get_tags();
             foreach ($all_tags as $tag) {
-                echo '<button type="button" class="portfolio-tag portfolio-tag-filter-button outline-slate-400 outline-1 hover:bg-slate-400 hover:text-slate-900 text-xs font-mono font-semibold text-slate-400 rounded-md py-1 px-2.5">' . esc_html($tag->name) . '</button>';
+                echo '<span role="button" class="portfolio-tag portfolio-tag-filter-button cursor-pointer outline-slate-400 outline-1 hover:bg-slate-400 hover:text-slate-900 text-xs font-mono font-semibold text-slate-400 rounded-md py-1 px-2.5">' . esc_html($tag->name) . '</span>';
             }
             ?>
         </div>
@@ -126,47 +126,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-var activeTags = [];
+const activeTags = [];
+const portfolioParent = document.getElementById('portfolio-carousel');
+
+function lockScrollPosition(scrollY) {
+    window.scrollTo(0, scrollY);
+    requestAnimationFrame(() => {
+        window.scrollTo(0, scrollY);
+        requestAnimationFrame(() => window.scrollTo(0, scrollY));
+    });
+}
+
+function applyPortfolioFilter() {
+    const scrollY = window.scrollY;
+    const portfolioItems = [...portfolioParent.children];
+
+    portfolioItems.forEach(item => {
+        const matchesTags = activeTags.length === 0 || activeTags.every(tagClass => item.classList.contains(tagClass));
+        item.classList.toggle('hidden', !matchesTags);
+    });
+
+    lockScrollPosition(scrollY);
+}
+
 const allTags = document.getElementsByClassName('portfolio-tag-filter-button');
 [...allTags].forEach(tag => {
-    tag.addEventListener('click', function (e) {
-        var cleanClass = tag.textContent.toLowerCase();
-        cleanClass = cleanClass.replace(/\s/g, '');
-        
-        if(tag.classList.contains('active')){
-            tag.classList.remove('active');
-            tag.classList.remove('bg-slate-400');
-            tag.classList.remove('text-slate-900');
-            tag.classList.remove(cleanClass);
-            tag.classList.remove('outline-0');
+    tag.addEventListener('click', function () {
+        const cleanClass = tag.textContent.toLowerCase().replace(/\s/g, '');
+
+        if (tag.classList.contains('active')) {
+            tag.classList.remove('active', 'bg-slate-400', 'text-slate-900', cleanClass, 'outline-0');
             tag.classList.add('outline-1');
             activeTags = activeTags.filter(item => item !== cleanClass);
-
         } else {
             activeTags.push(cleanClass);
-            tag.classList.add('active');
-            tag.classList.add('bg-slate-400');
-            tag.classList.add('text-slate-900');
-            tag.classList.add(cleanClass);
-            tag.classList.add('outline-0');
+            tag.classList.add('active', 'bg-slate-400', 'text-slate-900', cleanClass, 'outline-0');
             tag.classList.remove('outline-1');
         }
 
-        console.log(activeTags);
-
-        const portfolioParent = document.getElementById('portfolio-carousel');
-        const portfolioItems = [...portfolioParent.children];
-        
-        
-        portfolioItems.forEach(item => {
-            const hasAnyTag = activeTags.every(tag => item.classList.contains(tag));
-            if(!hasAnyTag){
-                item.classList.add('hidden');
-            } else {
-                item.classList.remove('hidden');   
-            }
-        });
-    })
+        applyPortfolioFilter();
+    });
 });
 
 </script>
