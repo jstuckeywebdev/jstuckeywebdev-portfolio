@@ -28,7 +28,7 @@ $class_str = '';
     </div>
     <div class="p-4 flex flex-col grow justify-between">
         <div>
-            <h2 class="text-xl font-bold text-slate-100 mb-2 group-hover:text-indigo-400 transition-colors"><?php the_title();?></h2>      
+            <a href="<?php echo the_permalink(); ?>"><h2 class="text-xl font-bold text-slate-100 mb-2 group-hover:text-indigo-400 transition-colors"><?php the_title();?></a></h2>      
             <?php 
             $description = get_field('portfolio_description');
             $live_url = get_field('live_url'); 
