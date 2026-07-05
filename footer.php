@@ -1,11 +1,21 @@
 <footer class="bg-slate-950 border-t border-slate-900 py-5 px-4 sm:px-6 lg:px-0">
-    <div class="container mx-auto">
-        <p class="font-mono text-sm text-slate-400">
-            &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.
-        </p>
-        <p class="font-mono text-sm text-slate-400">
-            All rights reserved.
-        </p>
+    <div class="container mx-auto flex justify-between">
+        <div>
+            <p class="font-mono text-sm text-slate-400">
+                &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.
+            </p>
+            <p class="font-mono text-sm text-slate-400">
+                All rights reserved.
+            </p>
+        </div>
+        <nav class="flex items-center">
+            <ul class="flex gap-8 font-mono">
+                <li><a href="/#my-work" class="text-slate-400 hover:text-indigo-400 transition-colors text-sm">Portfolio</a></li>
+                <li><a href="https://github.com/jstuckeywebdev" target="_blank" class="font-medium text-slate-400 hover:text-indigo-400 transition-colors text-sm">Github</a></li>
+                <li><a href="/#contact" class="text-slate-400 hover:text-indigo-400 transition-colors text-sm">Contact</a></li>
+            </ul>
+        </nav>
+
     </div>
 </footer>
 <script>

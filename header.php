@@ -22,7 +22,8 @@
             
             <nav class="hidden md:block" aria-label="Primary">
                 <ul class="flex gap-8 font-mono">
-                    <li><a href="/#my-work" class="font-medium text-slate-100 hover:text-indigo-400 transition-colors">My Work</a></li>
+                    <li><a href="/#my-work" class="font-medium text-slate-100 hover:text-indigo-400 transition-colors">Portfolio</a></li>
+                    <li><a href="https://github.com/jstuckeywebdev" target="_blank" class="font-medium text-slate-100 hover:text-indigo-400 transition-colors">Github</a></li>
                     <li><a href="/#contact" class="font-medium text-slate-100 hover:text-indigo-400 transition-colors">Contact</a></li>
                 </ul>
             </nav>
@@ -44,7 +45,8 @@
 
     <nav id="mobile-nav-menu" class="mobile-nav-menu md:hidden hidden border-t border-slate-900 bg-slate-950" aria-label="Primary mobile">
         <ul class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col gap-4 font-mono">
-            <li><a href="/#my-work" class="block font-medium text-slate-100 hover:text-indigo-400 transition-colors">My Work</a></li>
+            <li><a href="/#my-work" class="block font-medium text-slate-100 hover:text-indigo-400 transition-colors">Portfolio</a></li>
+            <li><a href="https://github.com/jstuckeywebdev" target="_blank" class="block font-medium text-slate-100 hover:text-indigo-400 transition-colors">My Work</a></li>
             <li><a href="/#contact" class="block font-medium text-slate-100 hover:text-indigo-400 transition-colors">Contact</a></li>
         </ul>
     </nav>
