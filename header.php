@@ -6,7 +6,8 @@
     <!-- Google Fonts Preconnect (Speeds up font loading) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+    <!-- favicon -->
+    <link rel="icon" type="image/svg+xml" href="wp-content/themes/jstuckeywebdev/assets/images/jstuckeywebdev-favicon_512x512.svg">
     <!-- Inter (Sans-Serif) & JetBrains Mono (Monospace) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <?php wp_head(); ?>
