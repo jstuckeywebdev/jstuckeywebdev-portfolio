@@ -59,6 +59,7 @@
         </div>
     </div>
 </section>
+
 <section id="contact" class="py-15 relative border-t border-slate-900">
     <div class="absolute inset-0 bg-linear-to-t from-slate-900/80 via-slate-950/40 to-slate-900/80 z-10 pointer-events-none"></div>
 
@@ -76,12 +77,6 @@
         </div>
     </div>
 </section>
-
-
-
-
-
-
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
