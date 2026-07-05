@@ -385,6 +385,54 @@
   color: #020617;
 }
 
-.mobile-view {
-  max-width:  400px;
+.iframe-container {
+  overflow: hidden;
+  height: 100%;
+}
+
+.iframe-preview-clip {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.iframe-preview-scaler {
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .iframe-container[data-preview="mobile"] .iframe-preview-scaler {
+    max-width: 400px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .iframe-container,
+  .iframe-preview-clip {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .iframe-preview-section.is-preview-fit-content {
+    height: auto;
+  }
+
+  .iframe-preview-stage.is-fit-content {
+    height: auto;
+  }
+
+  .iframe-container[data-preview="desktop"].iframe-preview-fit-content {
+    height: auto;
+    align-self: flex-start;
+  }
+
+  .iframe-container[data-preview="desktop"].iframe-preview-fit-content .iframe-preview-clip {
+    height: auto;
+  }
+
+  .iframe-preview-section.is-preview-fit-content .desktop-mobile-toggle {
+    margin-top: 1rem;
+  }
 }
