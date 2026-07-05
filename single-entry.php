@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section class="py-15 relative code-bg-image header-offset">
+<section class="py-15 relative code-bg-image">
     <div class="backdrop-blur-xs absolute inset-0 bg-linear-to-t from-slate-950/40 via-slate-900/90 to-slate-950/40 z-10 pointer-events-none"></div>
  
     <div class="fade-and-slide-in container mx-auto z-20 relative px-4 sm:px-6 lg:px-8 header-offset">

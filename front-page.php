@@ -63,9 +63,9 @@
             endif;
             ?>
 
-            <div id="portfolio-carousel-storage" hidden aria-hidden="true"></div>
             <div aria-hidden="true" class="carousel-end-spacer shrink-0 w-[15vw] md:w-8"></div>
         </div>
+        <div id="portfolio-carousel-storage" hidden aria-hidden="true"></div>
     </div>
 </section>
 <section id="contact" class="py-15 relative border-t border-slate-900">

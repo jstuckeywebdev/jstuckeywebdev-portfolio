@@ -188,4 +188,11 @@ document.addEventListener('DOMContentLoaded', () => {
             handleTagActivation(tag, getScrollY());
         });
     });
+
+    document.querySelectorAll('.slide-in-left').forEach((element) => {
+        element.addEventListener('animationend', () => {
+            element.classList.remove('slide-in-left');
+            element.style.transform = '';
+        }, { once: true });
+    });
 });
