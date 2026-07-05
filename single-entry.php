@@ -41,13 +41,14 @@
             <?php 
             $live_url = get_field('live_url'); 
             $github_url = get_field('github_url');
+            ?>
 
-            if ( $github_url ) : ?>
-                <a href="<?php echo esc_url($github_url) ?>" target="_blank" rel="noopener" class="text-slate-400 hover:text-slate-200 transition-colors">GitHub →</a>
-            <?php endif; ?>
             <?php if ( $live_url ) : ?>
                 <a href="<?php echo $live_url ?>" target="_blank" rel="noopener" class="text-indigo-400 hover:text-indigo-300 transition-colors">Visit Site →</a>
             <?php endif; ?>                
+            <?php if ( $github_url ) : ?>
+                <a href="<?php echo esc_url($github_url) ?>" target="_blank" rel="noopener" class="text-slate-400 hover:text-slate-200 transition-colors">GitHub</a>
+            <?php endif; ?>
         </div>
     </div>
 </section>

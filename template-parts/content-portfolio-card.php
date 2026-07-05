@@ -39,12 +39,11 @@ $class_str = '';
                 <p class="text-slate-400 text-sm line-clamp-3 mb-4"><?php echo esc_html($description); ?></p>
             <?php endif; ?>
         </div>
-        <div class="flex justify-between gap-4 text-xs font-mono mt-auto pt-2 border-t border-slate-800/50">
+        <div class="flex justify-between gap-4 text-xs font-mono mt-auto pt-2 border-t border-slate-800/50">           
+            <a href="<?php echo the_permalink(); ?>" rel="noopener" class="text-indigo-400 hover:text-indigo-300 transition-colors">View Project →</a>             
             <?php if ( $github_url ) : ?>
                 <a href="<?php echo esc_url($github_url) ?>" target="_blank" rel="noopener" class="text-slate-400 hover:text-slate-200 transition-colors">GitHub</a>
             <?php endif; ?>
-            
-            <a href="<?php echo the_permalink(); ?>" rel="noopener" class="text-indigo-400 hover:text-indigo-300 transition-colors">View Project →</a>             
         </div>
     </div>
 </article>

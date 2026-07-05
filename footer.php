@@ -1,5 +1,5 @@
-<footer class="bg-slate-950 border-t border-slate-900 py-5">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<footer class="bg-slate-950 border-t border-slate-900 py-5 px-4 sm:px-6 lg:px-0">
+    <div class="container mx-auto">
         <p class="font-mono text-sm text-slate-400">
             &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.
         </p>
