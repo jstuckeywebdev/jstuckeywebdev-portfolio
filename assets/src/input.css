@@ -136,56 +136,37 @@
 }
 
 @utility carousel-track-padding {
-  padding-left: 15vw;
-  padding-right: 15vw;
-
-  @media (width >= 40rem) {
-    padding-left: calc((100vw - min(100vw, 40rem)) / 2 + 1.5rem);
-    padding-right: 1.5rem;
-  }
-
-  @media (width >= 48rem) {
-    padding-left: calc((100vw - min(100vw, 48rem)) / 2 + 1.5rem);
-    padding-right: 1.5rem;
-  }
+  /* Section px-4/sm:px-6 handles alignment below lg */
+  padding-left: 0;
+  padding-right: 0;
 
   @media (width >= 64rem) {
-    padding-left: calc((100vw - min(100vw, 64rem)) / 2 + 2rem);
+    padding-left: calc((100vw - min(100vw, 64rem)) / 2);
     padding-right: 2rem;
   }
 
   @media (width >= 80rem) {
-    padding-left: calc((100vw - 80rem) / 2 + 2rem);
-    padding-right: 2rem;
+    padding-left: calc((100vw - min(100vw, 80rem)) / 2);
   }
 
   @media (width >= 96rem) {
-    padding-left: calc((100vw - 96rem) / 2 + 2rem);
-    padding-right: 2rem;
+    padding-left: calc((100vw - min(100vw, 96rem)) / 2);
   }
 }
 
 @utility carousel-scroll-inset {
   scroll-padding-left: 0;
 
-  @media (width >= 40rem) {
-    scroll-padding-left: calc((100vw - min(100vw, 40rem)) / 2 + 1.5rem);
-  }
-
-  @media (width >= 48rem) {
-    scroll-padding-left: calc((100vw - min(100vw, 48rem)) / 2 + 1.5rem);
-  }
-
   @media (width >= 64rem) {
-    scroll-padding-left: calc((100vw - min(100vw, 64rem)) / 2 + 2rem);
+    scroll-padding-left: calc((100vw - min(100vw, 64rem)) / 2);
   }
 
   @media (width >= 80rem) {
-    scroll-padding-left: calc((100vw - 80rem) / 2 + 2rem);
+    scroll-padding-left: calc((100vw - min(100vw, 80rem)) / 2);
   }
 
   @media (width >= 96rem) {
-    scroll-padding-left: calc((100vw - 96rem) / 2 + 2rem);
+    scroll-padding-left: calc((100vw - min(100vw, 96rem)) / 2);
   }
 }
 
@@ -311,12 +292,6 @@
 }
 
 @media (max-width: 767px) {
-    html,
-    body {
-        overflow-x: clip;
-        max-width: 100%;
-    }
-
     html {
         scroll-behavior: auto;
     }
@@ -327,11 +302,6 @@
 
     .portfolio-carousel-scroller article {
         scroll-snap-align: none;
-    }
-
-    .slide-in-left {
-        transform: none;
-        animation: fade-and-slide-in 0.5s ease-out 0.5s forwards;
     }
 }
 

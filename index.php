@@ -25,10 +25,10 @@
     </div>
 </section>
 
-<section id="my-work" class="py-15 relative">
+<section id="my-work" class="py-15 px-4 sm:px-6 lg:px-0 relative">
     <div class="absolute inset-0 bg-linear-to-t from-slate-900/80 via-slate-950/40 to-slate-900/80 z-10 pointer-events-none"></div>
     
-    <div class="fade-and-slide-in container mx-auto z-20 relative px-4 sm:px-6 lg:px-8">
+    <div class="fade-and-slide-in container mx-auto z-20 relative">
         <span class="font-mono text-sm font-semibold tracking-wider text-indigo-400 uppercase">Portfolio</span>
         <h2 class="font-mono text-slate-100 text-4xl mt-3 mb-3">Featured Projects</h2>
         <p class="text-slate-400 text-lg mb-8 leading-relaxed">A selection of custom web development projects, featuring clean code, responsive layouts, and tailored WordPress architecture.</p> 

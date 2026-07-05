@@ -1,9 +1,9 @@
 <?php get_header(); ?>
 
-<section class="py-15 relative code-bg-image">
+<section class="py-15 relative code-bg-image px-4 sm:px-6 lg:px-0">
     <div class="backdrop-blur-xs absolute inset-0 bg-linear-to-t from-slate-950/40 via-slate-900/90 to-slate-950/40 z-10 pointer-events-none"></div>
  
-    <div class="fade-and-slide-in container mx-auto z-20 relative px-4 sm:px-6 lg:px-8 header-offset">
+    <div class="fade-and-slide-in container mx-auto z-20 relative header-offset">
 
     <?php 
         $description = get_field('portfolio_description');
@@ -52,8 +52,12 @@
     </div>
 </section>
 
-<section class="circuit-board-bg relative py-15 h-dvh iframe-preview-section">
-    <div class="absolute inset-0 bg-linear-to-t from-slate-900/80 via-slate-950/40 to-slate-900/80 z-10 pointer-events-none"></div>
+<section class="circuit-board-bg relative py-15 h-dvh iframe-preview-section px-4 sm:px-6 lg:px-0">
+    <div class="absolute inset-0 bg-linear-to-t from-slate-900/80 via-slate-950/40 to-slate-900/80 z-0 pointer-events-none"></div>
+
+    <div class="container mx-auto relative z-20">
+        <h2 class="font-mono text-slate-100 text-4xl mt-3 mb-3">Live Demo</h2>
+    </div>
 
     <?php 
         $live_url = get_field('live_url');
@@ -76,10 +80,10 @@
 
 </section>
 
-<section id="contact" class="py-15 relative border-t border-slate-900">
+<section id="contact" class="py-15 relative border-t border-slate-900 px-4 sm:px-6 lg:px-0">
     <div class="absolute inset-0 bg-linear-to-t from-slate-900/80 via-slate-950/40 to-slate-900/80 z-10 pointer-events-none"></div>
 
-    <div class="fade-and-slide-in lazy-loaded container mx-auto relative z-20 px-4 sm:px-6 lg:px-8">
+    <div class="fade-and-slide-in lazy-loaded container mx-auto relative z-20">
         <div class="max-w-2xl">
             <span class="font-mono text-sm font-semibold tracking-wider text-indigo-400 uppercase">Contact</span>
             <h2 class="font-mono text-slate-100 text-4xl mt-3 mb-3">Get In Touch</h2>

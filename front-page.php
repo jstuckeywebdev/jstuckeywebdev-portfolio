@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section class="relative min-h-125 flex items-center overflow-hidden bg-slate-950 border-b border-slate-900 py-24"> 
+<section class="relative min-h-125 flex items-center overflow-hidden bg-slate-950 border-b border-slate-900 py-24 px-4 sm:px-6 lg:px-0"> 
     <video 
         autoplay 
         loop 
@@ -12,7 +12,7 @@
     </video>
 
     <div class="backdrop-blur-xs absolute inset-0 bg-linear-to-t from-slate-950/40 via-slate-900/90 to-slate-950/40 z-10 pointer-events-none"></div>
-    <div class="container m-auto px-4 sm:px-6 lg:px-8">
+    <div class="container m-auto">
         <div class="header-offset relative z-20 max-w-5xl mr-auto w-full fade-and-slide-in">
             <span class="font-mono text-sm font-semibold tracking-wider text-indigo-400 uppercase">Available for Work</span>
             <h1 class="text-5xl font-bold tracking-tight text-slate-100 mt-3 mb-4">
@@ -25,10 +25,10 @@
     </div>
 </section>
 
-<section id="my-work" class="py-15 relative" >
+<section id="my-work" class="py-15 px-4 sm:px-6 lg:px-0 relative" >
     <div class="absolute inset-0 bg-linear-to-t from-slate-900/80 via-slate-950/40 to-slate-900/80 z-10 pointer-events-none"></div>
     
-    <div class="fade-and-slide-in container mx-auto z-20 relative px-4 sm:px-6 lg:px-8">
+    <div class="fade-and-slide-in container mx-auto z-20 relative">
         <span class="font-mono text-sm font-semibold tracking-wider text-indigo-400 uppercase">Portfolio</span>
         <h2 class="font-mono text-slate-100 text-4xl mt-3 mb-3">Featured Projects</h2>
         <p class="text-slate-400 mb-6 text-lg leading-relaxed">A selection of custom web development projects, featuring clean code, responsive layouts, and tailored WordPress architecture.</p> 
@@ -68,10 +68,10 @@
         <div id="portfolio-carousel-storage" hidden aria-hidden="true"></div>
     </div>
 </section>
-<section id="contact" class="py-15 relative border-t border-slate-900">
+<section id="contact" class="py-15 relative border-t border-slate-900 px-4 sm:px-6 lg:px-0">
     <div class="absolute inset-0 bg-linear-to-t from-slate-900/80 via-slate-950/40 to-slate-900/80 z-10 pointer-events-none"></div>
 
-    <div class="fade-and-slide-in lazy-loaded container mx-auto relative z-20 px-4 sm:px-6 lg:px-8">
+    <div class="fade-and-slide-in lazy-loaded container mx-auto relative z-20">
         <div class="max-w-2xl">
             <span class="font-mono text-sm font-semibold tracking-wider text-indigo-400 uppercase">Contact</span>
             <h2 class="font-mono text-slate-100 text-4xl mt-3 mb-3">Get In Touch</h2>

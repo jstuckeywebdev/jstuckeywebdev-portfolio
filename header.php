@@ -15,7 +15,7 @@
 <header class="absolute z-50 w-full">
     <div class="bg-slate-950 slide-down h-full py-5">
         
-        <div class="flex justify-between items-center container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center container mx-auto px-4 sm:px-6 lg:px-0">
             <div class="site-title font-mono font-medium text-slate-100">
                 <a href="/">Joey Stuckey | Web Developer</a>
             </div>
