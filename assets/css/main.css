@@ -254,6 +254,9 @@
   .mt-3 {
     margin-top: calc(var(--spacing) * 3);
   }
+  .mt-5 {
+    margin-top: calc(var(--spacing) * 5);
+  }
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
   }
@@ -765,6 +768,13 @@
     &:hover {
       @media (hover: hover) {
         color: var(--color-indigo-400);
+      }
+    }
+  }
+  .hover\:text-slate-100 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-slate-100);
       }
     }
   }

@@ -76,7 +76,7 @@
             <span class="font-mono text-sm font-semibold tracking-wider text-indigo-400 uppercase">Contact</span>
             <h2 class="font-mono text-slate-100 text-4xl mt-3 mb-3">Get In Touch</h2>
             <p class="text-slate-400 text-lg mb-8 leading-relaxed">
-                I look forward to helping with your project!
+                Shoot me an email at <a href="mailto:joey@jstuckeyweb.dev">joey@jstuckeyweb.dev</a> or fill out the contact form below to let me know how I can help with your project!
             </p>
 
             <div class="contact-form-card bg-slate-900 rounded-xl border border-slate-800/60 p-6 sm:p-8">

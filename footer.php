@@ -1,20 +1,22 @@
 <footer class="bg-slate-950 border-t border-slate-900 py-5 px-4 sm:px-6 lg:px-0">
-    <div class="container mx-auto flex justify-between">
-        <div>
-            <p class="font-mono text-sm text-slate-400">
-                &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.
-            </p>
-            <p class="font-mono text-sm text-slate-400">
-                All rights reserved.
-            </p>
-        </div>
+    <div class="container mx-auto flex flex-col justify-between">
+        <p class="font-mono text-lg text-slate-400"><a href="/">Joey Stuckey | Web Developer</a></p>
         <nav class="flex items-center">
-            <ul class="flex gap-8 font-mono">
-                <li><a href="/#my-work" class="text-slate-400 hover:text-indigo-400 transition-colors text-sm">Portfolio</a></li>
-                <li><a href="https://github.com/jstuckeywebdev" target="_blank" class="font-medium text-slate-400 hover:text-indigo-400 transition-colors text-sm">Github</a></li>
-                <li><a href="/#contact" class="text-slate-400 hover:text-indigo-400 transition-colors text-sm">Contact</a></li>
-            </ul>
+            <?php
+            wp_nav_menu( array(
+                'theme_location' => 'primary-menu',
+                'container'      => false, // Removes the default <div> wrapper
+                'menu_class'     => 'flex gap-8 font-mono text-slate-400 text-sm', // Adds a class to the <ul> element
+            ) );
+            ?>    
         </nav>
+        <p class="font-mono text-sm text-slate-400">
+            <a href="mailto:joey@jstuckeyweb.dev">joey@jstuckeyweb.dev</a>
+        </p>
+
+        <p class="font-mono text-sm text-slate-400 mt-5">
+            &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All rights reserved.
+        </p>
 
     </div>
 </footer>
