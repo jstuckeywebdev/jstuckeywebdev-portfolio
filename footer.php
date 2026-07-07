@@ -1,6 +1,6 @@
 <footer class="bg-slate-950 border-t border-slate-900 py-5 px-4 sm:px-6 lg:px-0">
-    <div class="container mx-auto flex flex-col justify-between">
-        <p class="font-mono text-lg text-slate-400"><a href="/">Joey Stuckey | Web Developer</a></p>
+    <div class="container mx-auto flex flex-col justify-between gap-y-2">
+        <p class="font-mono text-lg text-slate-400">Joey Stuckey | Web Developer</p>
         <nav class="flex items-center">
             <?php
             wp_nav_menu( array(
@@ -14,9 +14,14 @@
             <a href="mailto:joey@jstuckeyweb.dev">joey@jstuckeyweb.dev</a>
         </p>
 
-        <p class="font-mono text-sm text-slate-400 mt-5">
-            &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All rights reserved.
-        </p>
+        <div>
+            <p class="font-mono text-sm text-slate-400 mt-5">
+                &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.
+            </p>
+            <p class="font-mono text-sm text-slate-400">
+                All rights reserved.
+            </p>
+        </div>
 
     </div>
 </footer>

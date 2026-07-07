@@ -418,3 +418,12 @@
     margin-top: 1rem;
   }
 }
+
+header nav ul a:hover {
+  color: var(--color-slate-400);
+}
+
+footer a:hover {
+  color: var(--color-slate-100);
+}
+

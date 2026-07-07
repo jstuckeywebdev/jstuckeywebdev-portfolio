@@ -1,4 +1,16 @@
-<?php get_header(); ?>
+<?php get_header(); 
+
+$hero_overline = get_field('hero_overline');
+$hero_heading = get_field('hero_heading');
+$hero_text = get_field('hero_text');
+$portfolio_overline = get_field('portfolio_overline');
+$portfolio_heading = get_field('portfolio_heading');
+$portfolio_text = get_field('portfolio_text');
+$contact_overline = get_field('contact_overline');
+$contact_heading = get_field('contact_heading');
+$contact_text = get_field('contact_text');
+
+?>
 
 <section class="relative min-h-125 flex items-center overflow-hidden bg-slate-950 border-b border-slate-900 py-24 px-4 sm:px-6 lg:px-0"> 
     <video 
@@ -14,12 +26,12 @@
     <div class="backdrop-blur-xs absolute inset-0 bg-linear-to-t from-slate-950/40 via-slate-900/90 to-slate-950/40 z-10 pointer-events-none"></div>
     <div class="container m-auto">
         <div class="header-offset relative z-20 max-w-5xl mr-auto w-full fade-and-slide-in">
-            <span class="font-mono text-sm font-semibold tracking-wider text-indigo-400 uppercase">Available for Work</span>
+            <span class="font-mono text-sm font-semibold tracking-wider text-indigo-400 uppercase"><?php echo $hero_overline ?></span>
             <h1 class="text-5xl font-bold tracking-tight text-slate-100 mt-3 mb-4">
-                Joey Stuckey
+                <?php echo $hero_heading ?>
             </h1>
             <p class="text-xl text-slate-300 max-w-2xl leading-relaxed hero-tagline">
-                Web Developer specializing in clean custom WordPress themes and modern frontend solutions.
+                <?php echo $hero_text ?>
             </p>
         </div>
     </div>
@@ -29,9 +41,9 @@
     <div class="absolute inset-0 bg-linear-to-t from-slate-900/80 via-slate-950/40 to-slate-900/80 z-10 pointer-events-none"></div>
     
     <div class="fade-and-slide-in container mx-auto z-20 relative">
-        <span class="font-mono text-sm font-semibold tracking-wider text-indigo-400 uppercase">Portfolio</span>
-        <h2 class="font-mono text-slate-100 text-4xl mt-3 mb-3">Featured Projects</h2>
-        <p class="text-slate-400 mb-6 text-lg leading-relaxed">A selection of custom web development projects, featuring clean code, responsive layouts, and tailored WordPress architecture.</p> 
+        <span class="font-mono text-sm font-semibold tracking-wider text-indigo-400 uppercase"><?php echo $portfolio_overline ?></span>
+        <h2 class="font-mono text-slate-100 text-4xl mt-3 mb-3"><?php echo $portfolio_heading ?></h2>
+        <p class="text-slate-400 mb-6 text-lg leading-relaxed"><?php echo $portfolio_text ?></p> 
         <div class="all-tags flex flex-wrap mb-8 gap-2">
             <?php 
             $all_tags = get_tags();
@@ -73,10 +85,10 @@
 
     <div class="fade-and-slide-in lazy-loaded container mx-auto relative z-20">
         <div class="max-w-2xl">
-            <span class="font-mono text-sm font-semibold tracking-wider text-indigo-400 uppercase">Contact</span>
-            <h2 class="font-mono text-slate-100 text-4xl mt-3 mb-3">Get In Touch</h2>
+            <span class="font-mono text-sm font-semibold tracking-wider text-indigo-400 uppercase"><?php echo $contact_overline ?></span>
+            <h2 class="font-mono text-slate-100 text-4xl mt-3 mb-3"><?php echo $contact_heading ?></h2>
             <p class="text-slate-400 text-lg mb-8 leading-relaxed">
-                Shoot me an email at <a href="mailto:joey@jstuckeyweb.dev">joey@jstuckeyweb.dev</a> or fill out the contact form below to let me know how I can help with your project!
+                <?php echo $contact_text ?>
             </p>
 
             <div class="contact-form-card bg-slate-900 rounded-xl border border-slate-800/60 p-6 sm:p-8">

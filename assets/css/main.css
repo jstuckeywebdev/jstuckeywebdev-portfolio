@@ -420,6 +420,9 @@
   .gap-8 {
     gap: calc(var(--spacing) * 8);
   }
+  .gap-y-2 {
+    row-gap: calc(var(--spacing) * 2);
+  }
   .overflow-hidden {
     overflow: hidden;
   }
@@ -771,13 +774,6 @@
       }
     }
   }
-  .hover\:text-slate-100 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-slate-100);
-      }
-    }
-  }
   .hover\:text-slate-200 {
     &:hover {
       @media (hover: hover) {
@@ -1122,6 +1118,12 @@
   .iframe-preview-section.is-preview-fit-content .desktop-mobile-toggle {
     margin-top: 1rem;
   }
+}
+header nav ul a:hover {
+  color: var(--color-slate-400);
+}
+footer a:hover {
+  color: var(--color-slate-100);
 }
 @property --tw-rotate-x {
   syntax: "*";
