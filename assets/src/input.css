@@ -383,6 +383,10 @@
   height: 100%;
 }
 
+.iframe-preview-stage {
+  height: 75vh;
+}
+
 @media (min-width: 768px) {
   .iframe-container[data-preview="mobile"] .iframe-preview-scaler {
     max-width: 400px;
@@ -426,4 +430,3 @@ header nav ul a:hover {
 footer a:hover {
   color: var(--color-slate-100);
 }
-

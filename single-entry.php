@@ -53,8 +53,8 @@
     </div>
 </section>
 
-<section class="circuit-board-bg relative py-15 h-dvh iframe-preview-section px-4 sm:px-6 lg:px-0">
-    <div class="absolute inset-0 bg-linear-to-t from-slate-900/80 via-slate-950/40 to-slate-900/80 z-0 pointer-events-none"></div>
+<section class="circuit-board-bg relative py-15 min-h-dvh iframe-preview-section px-4 sm:px-6 lg:px-0">
+    <div class="pt-25 absolute inset-0 bg-linear-to-t from-slate-900/80 via-slate-950/40 to-slate-900/80 z-0 pointer-events-none"></div>
 
     <div class="container mx-auto relative z-20">
         <h2 class="font-mono text-slate-100 text-4xl mt-3 mb-3">Live Demo</h2>
@@ -63,7 +63,7 @@
     <?php 
         $live_url = get_field('live_url');
     ?>
-    <div class="iframe-preview-stage flex justify-center h-11/12">
+    <div class="iframe-preview-stage flex justify-center">
         <div class="container z-20 iframe-container" data-preview="desktop">
             <div class="iframe-preview-clip">
                 <div class="iframe-preview-scaler">
