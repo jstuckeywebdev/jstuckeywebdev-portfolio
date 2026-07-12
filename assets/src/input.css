@@ -5,6 +5,10 @@
   --font-mono: "JetBrains Mono", "Fira Code", monospace;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .mobile-nav-toggle .mobile-nav-bar {
   transition: transform 0.2s ease, opacity 0.2s ease;
 }

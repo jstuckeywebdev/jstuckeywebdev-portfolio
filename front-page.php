@@ -48,56 +48,56 @@ $github_url = get_field('github_url');
 
 <section id="about" class="py-15 relative border-t border-slate-900 px-4 sm:px-6 lg:px-0">
     <div class="absolute inset-0 bg-linear-to-t from-slate-900/80 via-slate-950/40 to-slate-900/80 z-10 pointer-events-none"></div>
-    <div class="container md:gap-25 flex flex-col-reverse md:flex-row m-auto z-20 relative">
-        <div class="fade-and-slide-in md:w-2/3">
+    <div class="container z-20 relative m-auto">
+        <div class="fade-and-slide-in">
             <span class="font-mono text-sm font-semibold tracking-wider text-indigo-400 uppercase"><?php echo $about_overline ?></span>
             <h2 class="font-mono text-slate-100 text-4xl mt-3 mb-3"><?php echo $about_heading ?></h2>
-            <div class="text-slate-400 text-lg">
-                <p class="leading-relaxed"><?php echo $about_text ?></p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6 border-t border-slate-900">
-        
-        <!-- Experience Column -->
-        <div>
-            <h4 class="font-mono text-xs tracking-wider text-slate-500 uppercase mb-4">Work Experience</h4>
-            <div class="space-y-4">
-                <div class="flex flex-col">
-                    <span class="text-slate-200 font-medium">Website Support Developer</span>
-                    <div class="flex justify-between items-center text-xs font-mono text-slate-400 mt-1">
-                        <span>Infomedia</span>
-                        <span>2025 — Present</span>
+            <div class="md:gap-25 flex flex-col-reverse md:flex-row">
+                <div class="text-slate-400 text-lg md:w-2/3">
+                    <p class="leading-relaxed"><?php echo $about_text ?></p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6 border-t border-slate-900">
+                        <!-- Experience Column -->
+                        <div>
+                            <h4 class="font-mono text-xs tracking-wider text-slate-500 uppercase mb-4">Work Experience</h4>
+                            <div class="space-y-4">
+                                <div class="flex flex-col">
+                                    <span class="text-slate-200 font-medium">Website Support Developer</span>
+                                    <div class="flex justify-between items-center text-xs font-mono text-slate-400 mt-1">
+                                        <span>Infomedia</span>
+                                        <span>2025 — Present</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-slate-200 font-medium">Website Support Technician II</span>
+                                    <div class="flex justify-between items-center text-xs font-mono text-slate-400 mt-1">
+                                        <span>SuperPath</span>
+                                        <span>2024 — 2025</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Education Column -->
+                        <div>
+                            <h4 class="font-mono text-xs tracking-wider text-slate-500 uppercase mb-4">Education</h4>
+                            <div class="space-y-4">
+                                <div class="flex flex-col">
+                                    <span class="text-slate-200 font-medium">Full Stack Web Development with PHP</span>
+                                    <span class="text-xs font-mono text-slate-400 mt-1">Jefferson State Community College</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-slate-200 font-medium">Web Design Certification</span>
+                                    <span class="text-xs font-mono text-slate-400 mt-1">FreeCodeCamp</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="flex flex-col">
-                    <span class="text-slate-200 font-medium">Website Support Technician II</span>
-                    <div class="flex justify-between items-center text-xs font-mono text-slate-400 mt-1">
-                        <span>SuperPath</span>
-                        <span>2024 — 2025</span>
-                    </div>
-                </div>
+            </div>
+            <div class="md:w-1/3 mb-8">
+                <img src="<?php echo $about_image ?>" alt="" class="rounded-3xl aspect-square slide-in-left">
             </div>
         </div>
-
-        <!-- Education Column -->
-        <div>
-            <h4 class="font-mono text-xs tracking-wider text-slate-500 uppercase mb-4">Education</h4>
-            <div class="space-y-4">
-                <div class="flex flex-col">
-                    <span class="text-slate-200 font-medium">Full Stack Web Development with PHP</span>
-                    <span class="text-xs font-mono text-slate-400 mt-1">Jefferson State Community College</span>
-                </div>
-                <div class="flex flex-col">
-                    <span class="text-slate-200 font-medium">Web Design Certification</span>
-                    <span class="text-xs font-mono text-slate-400 mt-1">FreeCodeCamp</span>
-                </div>
-            </div>
-        </div>
-
     </div>
-            </div>
-        </div>
-        <div class="md:w-1/3">
-            <img src="<?php echo $about_image ?>" alt="" class="rounded-3xl aspect-square slide-in-left">
-        </div>
     </div>
 </section>
 
