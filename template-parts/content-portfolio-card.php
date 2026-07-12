@@ -26,8 +26,8 @@ $class_str = '';
         }
         ?>
     </div>
-    <div class="p-4 flex flex-col grow justify-between">
-        <div>
+    <div class="flex flex-col grow justify-between">
+        <div class="p-4">
             <a href="<?php echo the_permalink(); ?>"><h2 class="text-xl font-bold text-slate-100 mb-2 group-hover:text-indigo-400 transition-colors"><?php the_title();?></a></h2>      
             <?php 
             $description = get_field('portfolio_description');
@@ -39,10 +39,10 @@ $class_str = '';
                 <p class="text-slate-400 text-sm line-clamp-3 mb-4"><?php echo esc_html($description); ?></p>
             <?php endif; ?>
         </div>
-        <div class="flex justify-between gap-4 text-xs font-mono mt-auto pt-2 border-t border-slate-800/50">           
+        <div class="flex items-center justify-between gap-4 text-xs font-mono mt-auto py-2 px-4 border-t border-slate-800/50">           
             <a href="<?php echo the_permalink(); ?>" rel="noopener" class="text-indigo-400 hover:text-indigo-300 transition-colors">View Project →</a>             
             <?php if ( $github_url ) : ?>
-                <a href="<?php echo esc_url($github_url) ?>" target="_blank" rel="noopener" class="text-slate-400 hover:text-slate-200 transition-colors">GitHub</a>
+                <a href="<?php echo esc_url($github_url) ?>" target="_blank" rel="noopener" class="text-slate-400 hover:text-slate-200 transition-colors"><i class="fa-brands fa-github text-2xl">GitHub</i></a>
             <?php endif; ?>
         </div>
     </div>

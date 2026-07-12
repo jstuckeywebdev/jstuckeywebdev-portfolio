@@ -13,13 +13,15 @@
         <p class="font-mono text-sm text-slate-400">
             <a href="mailto:joey@jstuckeyweb.dev">joey@jstuckeyweb.dev</a>
         </p>
-
-        <div>
-            <p class="font-mono text-sm text-slate-400 mt-5">
-                &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.
+        <div class="div flex">
+            <p class="text-slate-400 text-3xl">
+                <a href="https://github.com/jstuckeywebdev" target="_blank"><i class="fa-brands fa-github" target="_blank"></i></a><a href="https://www.linkedin.com/in/jstuckeywebdev/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
             </p>
+        </div>
+
+        <div class=" mt-5">
             <p class="font-mono text-sm text-slate-400">
-                All rights reserved.
+                &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All rights reserved.
             </p>
         </div>
 
